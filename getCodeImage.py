@@ -28,6 +28,9 @@ right = code_element.size['width']+left
 height = code_element.size['height']+top
 im = Image.open(file1)
 img = im.crop((left,top,right,height))
+
+#需要根据显示器设置调整下坐标
+img.resize((1280,960), Image.ANTIALIAS)
 img.save(file2)
 print("关闭窗口")
 dr.close()
